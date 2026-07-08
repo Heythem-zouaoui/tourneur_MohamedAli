@@ -288,15 +288,22 @@ function Index() {
             </div>
             <div className="space-y-6 border-l border-border pl-8">
               <div>
+                <span className="mono-label">Fondateur</span>
+                <p className="mt-2 text-sm">
+                  Mohamed Ali Kochbati<br />
+                  <span className="text-muted-foreground">20 ans d'expérience</span>
+                </p>
+              </div>
+              <div>
                 <span className="mono-label">Atelier</span>
                 <p className="mt-2 text-sm">
-                  14 rue des Aciéries<br />
-                  25000 Besançon, France
+                  Ariana Borj Touil<br />
+                  2032, Tunisie
                 </p>
               </div>
               <div>
                 <span className="mono-label">Téléphone</span>
-                <p className="mt-2 font-mono text-sm">+33 (0)3 81 00 00 00</p>
+                <p className="mt-2 font-mono text-sm">+216 21 619 922</p>
               </div>
               <div>
                 <span className="mono-label">Horaires</span>
