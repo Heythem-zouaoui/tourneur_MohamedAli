@@ -46,6 +46,7 @@ const gallery = [
   { img: partAero, ref: "REF-A247", title: "Support d'angle usiné", material: "Aluminium", tol: "±0,015 mm" },
   { img: partShaft, ref: "REF-S118", title: "Bouchons filetés laiton", material: "Laiton CuZn39Pb3", tol: "±0,01 mm" },
   { img: partMedical, ref: "REF-M092", title: "Fraisage bloc acier", material: "Acier XC48", tol: "±0,01 mm" },
+  { img: partOperator, ref: "REF-F073", title: "Opération fraiseuse universelle", material: "Acier construction", tol: "±0,02 mm" },
 ];
 
 const sectors = ["Aéronautique", "Médical", "Automobile", "Énergie", "Défense", "Robotique"];
