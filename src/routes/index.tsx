@@ -3,10 +3,12 @@ import heroCnc from "@/assets/hero-cnc.jpg";
 import partBracketAsset from "@/assets/part-bracket.jpg.asset.json";
 import partBrassAsset from "@/assets/part-brass.jpg.asset.json";
 import workshopMillAsset from "@/assets/workshop-mill.jpg.asset.json";
+import fraiseuseAtelierAsset from "@/assets/fraiseuse-atelier.jpg.asset.json";
 
 const partAero = partBracketAsset.url;
 const partShaft = partBrassAsset.url;
 const partMedical = workshopMillAsset.url;
+const partOperator = fraiseuseAtelierAsset.url;
 const workshop = workshopMillAsset.url;
 
 export const Route = createFileRoute("/")({
@@ -44,6 +46,7 @@ const gallery = [
   { img: partAero, ref: "REF-A247", title: "Support d'angle usiné", material: "Aluminium", tol: "±0,015 mm" },
   { img: partShaft, ref: "REF-S118", title: "Bouchons filetés laiton", material: "Laiton CuZn39Pb3", tol: "±0,01 mm" },
   { img: partMedical, ref: "REF-M092", title: "Fraisage bloc acier", material: "Acier XC48", tol: "±0,01 mm" },
+  { img: partOperator, ref: "REF-F073", title: "Opération fraiseuse universelle", material: "Acier construction", tol: "±0,02 mm" },
 ];
 
 const sectors = ["Aéronautique", "Médical", "Automobile", "Énergie", "Défense", "Robotique"];
@@ -200,7 +203,7 @@ function Index() {
             <span className="mono-label">Archive 2026</span>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((p) => (
               <article key={p.ref} className="group">
                 <div className="relative overflow-hidden border border-border bg-graphite">
