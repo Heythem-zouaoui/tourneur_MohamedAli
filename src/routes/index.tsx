@@ -41,9 +41,9 @@ const capabilities = [
 ];
 
 const gallery = [
-  { img: partAero, ref: "REF-A247", title: "Support aéronautique", material: "Aluminium 7075", tol: "±0,015 mm" },
-  { img: partShaft, ref: "REF-S118", title: "Arbre de transmission", material: "Inox 316L", tol: "±0,01 mm" },
-  { img: partMedical, ref: "REF-M092", title: "Composant médical", material: "Titane Grade 5", tol: "±0,005 mm" },
+  { img: partAero, ref: "REF-A247", title: "Support d'angle usiné", material: "Aluminium", tol: "±0,015 mm" },
+  { img: partShaft, ref: "REF-S118", title: "Bouchons filetés laiton", material: "Laiton CuZn39Pb3", tol: "±0,01 mm" },
+  { img: partMedical, ref: "REF-M092", title: "Fraisage bloc acier", material: "Acier XC48", tol: "±0,01 mm" },
 ];
 
 const sectors = ["Aéronautique", "Médical", "Automobile", "Énergie", "Défense", "Robotique"];
