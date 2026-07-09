@@ -3,10 +3,12 @@ import heroCnc from "@/assets/hero-cnc.jpg";
 import partBracketAsset from "@/assets/part-bracket.jpg.asset.json";
 import partBrassAsset from "@/assets/part-brass.jpg.asset.json";
 import workshopMillAsset from "@/assets/workshop-mill.jpg.asset.json";
+import fraiseuseAtelierAsset from "@/assets/fraiseuse-atelier.jpg.asset.json";
 
 const partAero = partBracketAsset.url;
 const partShaft = partBrassAsset.url;
 const partMedical = workshopMillAsset.url;
+const partOperator = fraiseuseAtelierAsset.url;
 const workshop = workshopMillAsset.url;
 
 export const Route = createFileRoute("/")({
