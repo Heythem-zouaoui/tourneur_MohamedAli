@@ -203,7 +203,7 @@ function Index() {
             <span className="mono-label">Archive 2026</span>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((p) => (
               <article key={p.ref} className="group">
                 <div className="relative overflow-hidden border border-border bg-graphite">
