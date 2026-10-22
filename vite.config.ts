@@ -6,7 +6,14 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Where the static build is mounted. GitHub Pages project sites live under
+// /<repo>/, so the CI build sets PAGES_BASE accordingly (see deploy-pages.yml).
+const pagesBase = process.env.PAGES_BASE || "/";
+
 export default defineConfig({
+  vite: {
+    base: pagesBase,
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

@@ -62,15 +62,9 @@ if (!response.ok) {
   process.exit(1);
 }
 
-function withBase(markup, prefix) {
-  if (!prefix || prefix === "/") return markup;
-  const clean = prefix.endsWith("/") ? prefix.slice(0, -1) : prefix;
-  return markup.replace(/\b(href|src|content)="\/([^"]*)"/g, (match, attr, rest) =>
-    rest ? `${attr}="${clean}/${rest}"` : match,
-  );
-}
-
-const page = withBase(html, base);
+// Asset URLs are already prefixed by Vite's `base` option (vite.config.ts),
+// so the rendered markup only needs to be written out.
+const page = html;
 
 writeFileSync(join(clientDir, "index.html"), page);
 writeFileSync(join(clientDir, "404.html"), page);
