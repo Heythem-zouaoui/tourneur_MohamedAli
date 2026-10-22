@@ -51,7 +51,7 @@ const gallery = [
 
 const sectors = ["Aéronautique", "Médical", "Automobile", "Énergie", "Défense", "Robotique"];
 
-function Index() {
+export function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}

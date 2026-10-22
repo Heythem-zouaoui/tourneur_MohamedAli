@@ -12,10 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  vite: {
-    define: {
-      // Where the static build is mounted (e.g. /my-repo/ on GitHub Pages).
-      __APP_BASE__: JSON.stringify(process.env.PAGES_BASE || "/"),
-    },
-  },
 });
