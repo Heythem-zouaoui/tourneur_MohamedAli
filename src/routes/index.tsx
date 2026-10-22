@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroCnc from "@/assets/hero-cnc.jpg";
-import partBracketAsset from "@/assets/part-bracket.jpg.asset.json";
-import partBrassAsset from "@/assets/part-brass.jpg.asset.json";
-import workshopMillAsset from "@/assets/workshop-mill.jpg.asset.json";
-import fraiseuseAtelierAsset from "@/assets/fraiseuse-atelier.jpg.asset.json";
+import partBracket from "@/assets/part-bracket.jpg";
+import partBrass from "@/assets/part-brass.jpg";
+import workshopMill from "@/assets/workshop-mill.jpg";
+import fraiseuseAtelier from "@/assets/fraiseuse-atelier.jpg";
 
-const partAero = partBracketAsset.url;
-const partShaft = partBrassAsset.url;
-const partMedical = workshopMillAsset.url;
-const partOperator = fraiseuseAtelierAsset.url;
-const workshop = workshopMillAsset.url;
+const partAero = partBracket;
+const partShaft = partBrass;
+const partMedical = workshopMill;
+const partOperator = fraiseuseAtelier;
+const workshop = workshopMill;
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -51,7 +51,7 @@ const gallery = [
 
 const sectors = ["Aéronautique", "Médical", "Automobile", "Énergie", "Défense", "Robotique"];
 
-function Index() {
+export function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
