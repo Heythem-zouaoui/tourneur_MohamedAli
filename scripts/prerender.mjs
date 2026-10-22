@@ -55,7 +55,11 @@ if (!response.ok) {
 function withBase(markup, prefix) {
   if (!prefix || prefix === "/") return markup;
   const clean = prefix.endsWith("/") ? prefix.slice(0, -1) : prefix;
-  return markup.replace(/\b(href|src|content)="\/([^"]*)"/g, (match, attr, rest) =>
+  const tagged = markup.replace(
+    /<head([^>]*)>/,
+    `<head$1><meta name="app-base" content="${clean}/">`,
+  );
+  return tagged.replace(/\b(href|src|content)="\/([^"]*)"/g, (match, attr, rest) =>
     rest ? `${attr}="${clean}/${rest}"` : match,
   );
 }
