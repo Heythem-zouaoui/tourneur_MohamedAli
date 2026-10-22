@@ -10,6 +10,7 @@ import { pathToFileURL } from "node:url";
 
 const root = resolve(import.meta.dirname, "..");
 const base = process.env.PAGES_BASE || "/";
+const mount = base === "/" ? "" : base.endsWith("/") ? base.slice(0, -1) : base;
 
 const clientDir = [".output/public", "dist/client"]
   .map((dir) => join(root, dir))
@@ -44,7 +45,11 @@ if (typeof handler?.fetch !== "function") {
   process.exit(1);
 }
 
-const response = await handler.fetch(new Request("http://localhost/"), {}, { waitUntil() {} });
+const response = await handler.fetch(
+  new Request(`http://localhost${mount}/`),
+  {},
+  { waitUntil() {} },
+);
 const html = await response.text();
 
 if (!response.ok) {
