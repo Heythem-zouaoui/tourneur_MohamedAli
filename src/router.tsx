@@ -16,11 +16,17 @@ export const getRouter = () => {
   return router;
 };
 
-// The static build (GitHub Pages project sites) is served from a subdirectory.
-// scripts/prerender.mjs writes the mount point into a <meta name="app-base"> tag.
+// A static build can be served from a subdirectory (GitHub Pages project sites).
+// vite.config.ts bakes PAGES_BASE in as __APP_BASE__, and scripts/prerender.mjs
+// mirrors it into a <meta name="app-base"> tag in the generated HTML.
+declare const __APP_BASE__: string | undefined;
+
 function readBasepath(): string | undefined {
-  if (typeof document === "undefined") return undefined;
-  const value = document.querySelector('meta[name="app-base"]')?.getAttribute("content");
+  const fromMeta =
+    typeof document === "undefined"
+      ? undefined
+      : document.querySelector('meta[name="app-base"]')?.getAttribute("content");
+  const value = (typeof __APP_BASE__ === "string" && __APP_BASE__) || fromMeta;
   if (!value || value === "/") return undefined;
   return value.replace(/\/$/, "");
 }
