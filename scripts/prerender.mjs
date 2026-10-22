@@ -45,11 +45,16 @@ if (typeof handler?.fetch !== "function") {
   process.exit(1);
 }
 
-const response = await handler.fetch(
-  new Request(`http://localhost${mount}/`),
-  {},
-  { waitUntil() {} },
-);
+let url = `http://localhost${mount}/`;
+let response;
+for (let hop = 0; hop < 5; hop++) {
+  response = await handler.fetch(new Request(url), {}, { waitUntil() {} });
+  if (response.status < 300 || response.status >= 400) break;
+  const location = response.headers.get("location");
+  if (!location) break;
+  console.log(`Following redirect ${url} -> ${location}`);
+  url = new URL(location, url).href;
+}
 const html = await response.text();
 
 if (!response.ok) {
